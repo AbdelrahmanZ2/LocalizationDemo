@@ -68,12 +68,6 @@ namespace LocalizationDemo.Services
             };
         }
 
-        public Dictionary<string,string> GetPageLayout(int pageId, Language language)
-        {
-            var query = _pageLayout.Where(p=>p.PageId == pageId && p.Language == language).ToDictionary(p=>p.key, p=>p.Value);
-            return query;
-        }
-
         public Dictionary<string, string> GetValuesByKeys(List<string> keys, Language language)
         {
             var query = _pageLayout.Where(P=>P.Language == language)

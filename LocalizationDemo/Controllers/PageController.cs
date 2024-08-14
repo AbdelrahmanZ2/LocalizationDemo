@@ -17,13 +17,6 @@ namespace LocalizationDemo.Controllers
             _pageService = pageService;
         }
 
-        [HttpGet("GetPageLayout")]
-        public IActionResult GetPageLayout([FromQuery] GetPageLayoutRequest request)
-        {
-            var result = _pageService.GetPageLayout(request.PageId, request.Language);
-            return Ok(result);
-        }
-
         [HttpPost("GetValuesByKeys")]
         public IActionResult GetValuesByKeys([FromBody] List<string> keys)
         {
