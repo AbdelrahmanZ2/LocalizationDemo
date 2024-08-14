@@ -1,0 +1,17 @@
+  <div class="imgcontainer">
+  </div>
+
+  <div *ngIf="labels" class="container">
+    <label for="uname"><b>{{labels['UserName']}}</b></label>
+    <input type="text" name="uname" >
+
+    <label for="psw"><b>{{labels['Password']}}</b></label>
+    <input type="password" name="psw">
+    <button type="submit" (click)="isAuthorized = true">{{labels['Login']}}</button>
+    <button type="submit" (click)="isAuthorized = !isAuthorized">{{labels['ShowHome']}}</button>
+  </div>
+
+<app-Home *ngIf="isAuthorized"></app-Home>
+
+
+
